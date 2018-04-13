@@ -1,16 +1,14 @@
 <?php
 error_reporting(0);
 
-$localhost="localhost";
-$user="user";
-$pass="";
-$bd_name="users";
+$host_name='Localhost';		
+$host_username='root';
+$host_password='';
+$db_name='users';	//database name
+$db=new mysqli($host_name,$host_username,$host_password,$db_name);
 
-mysql_db=new mysqli($localhost,$user,$pass,$db_name);
-
-if(mysql_db->error_no){
-	
-die("sorry cannot connect to server");
-
+//checking for the connection error 
+if ($db->connect_errno){
+	die('Connection Error!');
 }
 ?>
